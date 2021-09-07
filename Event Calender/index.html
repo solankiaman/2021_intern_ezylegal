@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Event Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="evo-calendar.css" />
+    <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div id="calendar"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="evo-calendar.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#calendar").evoCalendar({
+          calendarEvents: [
+            {
+              id: "event1", // Event's ID (required)
+              name: "Happy New Year", // Event name (required)
+              date: "January/1/2021", // Event date (required)
+              type: "holiday", // Event type (required)
+              everyYear: true, // Same event every year (optional)
+            },
+            {
+              name: "HTML CSS Daily Report.", // Event name (required)
+              date: ["August/1/2021", "August/30/2021"], // Event date (required)
+              type: "event", // Event type (required)
+              description: "What you have done so far.", // Event description (optional)
+              everyYear: true, // Same event every year (optional)
+            },
+            {
+              name: "Javascript Daily Report.",
+              badge: "09/21 - 09/21", // Event badge (optional)
+              date: ["September/1/2021", "September/30/2021"], // Date range
+              description: "What you have done so far.", // Event description (optional)
+              type: "event",
+              color: "#63d867", // Event custom color (optional)
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
